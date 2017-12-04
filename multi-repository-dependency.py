@@ -345,7 +345,8 @@ def create_non_version_dependency_groups(repository_dependency_info):
         previously_generated_artifacts, countdown_dependency_info, current_group_repositories = find_next_group_of_dependents(previously_generated_artifacts, countdown_dependency_info)
         print '--------------------------------------------------------------------------------'
         print 'group_num {} has {} repositories.'.format(group_num, len(current_group_repositories))
-        print 'current_group_repositories = "{}"'.format(current_group_repositories)
+        for repo in current_group_repositories:
+            print '{}'.format(repo)
         print '--------------------------------------------------------------------------------'
         sys.stdout.flush()
         non_version_dependency_groups.append(current_group_repositories)
